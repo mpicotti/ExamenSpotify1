@@ -1,4 +1,4 @@
-﻿using ApiSpotify.MODELS; // Canvia-ho pel teu namespace real
+﻿using ApiSpotify.MODELS;
 using ApiSpotify.Services;
 using Microsoft.Data.SqlClient;
 using System;
@@ -9,7 +9,7 @@ namespace ApiSpotify.REPOSITORY
 {
     public class DAOPerfils
     {
-        public static void Insert(DatabaseConnection dbConn, Perfils perfil, string salt)
+        public static void Insert(DatabaseConnection dbConn, Perfils perfil)
         {
 
             dbConn.Open();
@@ -109,7 +109,21 @@ namespace ApiSpotify.REPOSITORY
         }
 
 
+        public static bool Delete(DatabaseConnection dbConn, Guid id)
+        {
+            dbConn.Open();
 
+            string sql = @"DELETE FROM Perfils WHERE Id = @Id";
+
+            using SqlCommand cmd = new SqlCommand(sql, dbConn.sqlConnection);
+            cmd.Parameters.AddWithValue("@Id", id);
+
+            int rows = cmd.ExecuteNonQuery();
+
+            dbConn.Close();
+
+            return rows > 0;
+        }
 
     }
 }

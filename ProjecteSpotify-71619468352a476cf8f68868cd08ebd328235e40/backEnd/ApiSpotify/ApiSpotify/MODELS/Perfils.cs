@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApiSpotify.MODELS
 {
-    internal class Perfils
+    public class Perfils
     {
         public Guid Id { get; set; } = Guid.NewGuid();
         public Guid IdUsuari { get; set; }

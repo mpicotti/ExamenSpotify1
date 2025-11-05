@@ -30,7 +30,7 @@ namespace ApiSpotify.ENDPOINTS
                     : Results.NotFound(new { message = $"Perfils with Id {id} not found." });
             });
 
-            app.MapPost("/perfils", (Perfils req) =>
+            app.MapPost("/perfils", (PerfilsRequest req) =>
             {
                 Perfils perfil = new Perfils
                 {
@@ -42,10 +42,10 @@ namespace ApiSpotify.ENDPOINTS
                 };
 
                 DAOPerfils.Insert(dbConn, perfil);
-                return Results.Created($"/playlists/{perfil.Id}", perfil);
+                return Results.Created($"/perfils/{perfil.Id}", perfil);
             });
 
-            app.MapPut("/perfils/{id}", (Guid id, Perfils req) =>
+            app.MapPut("/perfils/{id}", (Guid id, PerfilsRequest req) =>
             {
                 var existing = DAOPerfils.GetById(dbConn, id);
                 if (existing == null)
@@ -70,3 +70,5 @@ namespace ApiSpotify.ENDPOINTS
         }
     }
 }
+
+public record PerfilsRequest(Guid IdUsuari, string Nom, string Descripcio,string Estat);

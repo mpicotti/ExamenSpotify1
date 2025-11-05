@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ApiSpotify.MODELS
+﻿namespace ApiSpotify.MODELS
 {
     public class Perfils
     {
@@ -16,3 +10,4 @@ namespace ApiSpotify.MODELS
 
     }
 }
+

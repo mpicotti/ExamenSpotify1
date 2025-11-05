@@ -42,21 +42,20 @@ namespace ApiSpotify.ENDPOINTS
                                 file.CopyTo(fs);
                             }
 
-                            using (var tagFile = TagLib.File.Create(tempPath))
-                            {
-                                var tag = tagFile.Tag;
-                                var props = tagFile.Properties;
+                            //using (var tagFile = TagLib.File.Create(tempPath))
+                            //{
+                            //    var tag = tagFile.Tag;
+                            //    var props = tagFile.Properties;
 
-                                var perfils = new Perfils
-                                {
-                                    Id = Guid.NewGuid(),
-                                    Nom = string.IsNullOrWhiteSpace(tag.Title) ? Path.GetFileNameWithoutExtension(file.FileName) : tag.Title,
-                                    Descripcio = (tag.Performers != null && tag.Performers.Length > 0) ? tag.Performers[0] : "Desconegut",
-                                    Estat = string.IsNullOrWhiteSpace(tag.Album) ? "Desconegut" : tag.Album,
-                                };
+                            //    var perfils = new Perfils
+                            //    {
+                            //                                                           //Part on s'han d'extreure les metadades
+                            //    };
 
-                                imatgesProcessades.Add(perfils);
-                            }
+                            //    imatgesProcessades.Add(perfils);
+                            //}
+
+
                         }
                         catch (Exception ex)
                         {
@@ -71,15 +70,6 @@ namespace ApiSpotify.ENDPOINTS
 
 
         }
-
-
-
-
-
-
-
-
-
 
     }
 }

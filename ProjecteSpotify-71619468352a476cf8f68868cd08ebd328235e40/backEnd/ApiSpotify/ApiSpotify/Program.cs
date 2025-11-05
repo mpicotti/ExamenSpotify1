@@ -71,6 +71,7 @@ webApp.MapLlistesReproduccionsEndpoints(dbConn);
 webApp.MapLlistareproduccioCancoEndpointsEndpoints(dbConn);
 webApp.MapQualitatsFitxersEndpoints(dbConn);
 webApp.MapExtreureMetadadesEndpoints(dbConn);
+webApp.MapPerfilsEndpoints(dbConn);
 
 webApp.Run();
 

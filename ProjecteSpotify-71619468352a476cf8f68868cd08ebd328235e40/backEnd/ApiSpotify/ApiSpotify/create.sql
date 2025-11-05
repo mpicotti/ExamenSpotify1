@@ -1,0 +1,14 @@
+USE Spotify;
+
+
+CREATE TABLE Perfils (
+    Id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    id_user UNIQUEIDENTIFIER  NOT NULL,
+    nom VARCHAR(50) NOT NULL,
+    descripcio VARCHAR(255) NOT NULL,
+    estat VARCHAR(255) NOT NULL
+    FOREIGN KEY (id_user) REFERENCES Users(Id)
+	
+);
+
+

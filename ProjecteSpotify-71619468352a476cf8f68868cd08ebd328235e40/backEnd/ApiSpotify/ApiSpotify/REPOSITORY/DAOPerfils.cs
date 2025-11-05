@@ -47,9 +47,9 @@ namespace ApiSpotify.REPOSITORY
                 {
                     Id = reader.GetGuid(0),
                     IdUsuari = reader.GetGuid(1),
-                    Nom = reader.GetString(1),
-                    Descripcio = reader.GetString(2),
-                    Estat = reader.GetString(3)
+                    //Nom = reader.GetString(1),
+                    //Descripcio = reader.GetString(2),
+                    //Estat = reader.GetString(3)
                 });
             }
 
@@ -75,9 +75,9 @@ namespace ApiSpotify.REPOSITORY
                 {
                     Id = reader.GetGuid(0),
                     IdUsuari = reader.GetGuid(1),
-                    Nom = reader.GetString(1),
-                    Descripcio = reader.GetString(2),
-                    Estat = reader.GetString(3)
+                    //Nom = reader.GetString(1),
+                    //Descripcio = reader.GetString(2),
+                    //Estat = reader.GetString(3)
                 };
             }
 
